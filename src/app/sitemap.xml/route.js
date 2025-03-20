@@ -1,7 +1,7 @@
 import { blogPosts } from "@/src/data/data";
 
 export async function GET() {
-    const baseUrl = process.env.BASE_URL
+    const baseUrl = process.env.BASE_URL||"https://sathish-blog.vercel.app/"
     const urls = blogPosts
     .map((post)=>`<url><loc>${baseUrl}/${post.slug}</loc></url>`)
     .join('\n')
